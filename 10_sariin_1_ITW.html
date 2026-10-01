@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- bodlogo 1 -->
+    <div>
+        <input type="text" id="nameInput" placeholder="neree oruulna uu">
+        <button id="btn" onclick="calculate()">ilgeeh</button>
+        <p id="result"></p>
+    </div>
+    <!-- bodlogo 2 -->
+    <div>
+        <input type="number" id="input" placeholder="too oruulna uu">
+        <input type="number" id="input_2" placeholder="too oruulna uu">
+        <button id="btn" onclick="sum()">niilber</button>
+        <p id="result_1"></p>
+    </div>
+    <div>
+        <input type="number" id="nameInput" placeholder="nasaa oruulna uu">
+        <button id="btn" onclick="shalgah()">nas shalgah</button>
+        <p id="result_3"></p>
+    </div>
+    <script>
+        function calculate() {
+            const input = document.getElementById("nameInput");
+            const result = document.getElementById("result");
+            const btn = document.getElementById("btn");
+            let name = input.value;
+            result.innerHTML = "sain baina uu " + name + "!"
+        }
+        function sum(){
+            const input = document.getElementById("input");
+            const input_2 = document.getElementById("input_2");
+            const btn = document.getElementById("btn");
+            const result = document.getElementById("result_1");
+            let number = Number(input.value);
+            let number_2 = Number(input_2.value);
+            let sum = number + number_2;
+            result_1.innerHTML = "niilber n: " + sum;
+        }
+        function shalgah(){
+            
+        }
+    </script>
+</body>
+</html>
