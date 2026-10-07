@@ -17,12 +17,50 @@
         <input type="number" id="input" placeholder="too oruulna uu">
         <input type="number" id="input_2" placeholder="too oruulna uu">
         <button id="btn" onclick="sum()">niilber</button>
-        <p id="result_1"></p>
+        <p id="result_2"></p>
     </div>
     <div>
-        <input type="number" id="nameInput" placeholder="nasaa oruulna uu">
+        <input type="number" id="ageInput" placeholder="nasaa oruulna uu">
         <button id="btn" onclick="shalgah()">nas shalgah</button>
         <p id="result_3"></p>
+    </div>
+    <div>
+        <input type="number" id="buhel_too" placeholder="buhel too oruulna uu">
+        <button id="btn" onclick="is_even()">is it even</button>
+        <p id="result_4"></p>
+    </div>
+    <div>
+        <input type="number" id="too_5.1" placeholder="buhel too oruulna uu">
+        <input type="number" id="too_5.2" placeholder="buhel too oruulna uu">
+        <button id="btn" onclick="is_max()">which one max</button>
+        <p id="result_5"></p>
+    </div>
+    <div>
+        <input type="number" id="too_6" placeholder="buhel too oruulna uu">
+        <button id="btn" onclick="square()">power of two</button>
+        <p id="result_6"></p>
+    </div>
+    <div>
+        <input type="number" id="too_7" placeholder="dunge oruulna uu">
+        <button id="btn" onclick="onoo()">onoo gargah</button>
+        <p id="result_7"></p>
+    </div>
+    <div>
+        <input type="number" id="too_8" placeholder="celsiusee oruulna uu">
+        <button id="btn" onclick="hurwuuleh()">fahrenheit bolgoh</button>
+        <p id="result_8"></p>
+    </div>
+    <div>
+        <input type="number" id="too_9" placeholder="toogoo oruulna uu">
+        <button id="btn" onclick="sumofdigits()">digit uudiin niilberiig olgoh</button>
+        <p id="result_9"></p>
+    </div>
+    <div>
+        <input type="text" id="too_10.1" placeholder="baranii neriig oruulna uu">
+        <input type="number" id="too_10.2" placeholder="negj uniig oruulna uu">
+        <input type="number" id="too_10.3" placeholder="too shirhegiig oruulna uu">
+        <button id="btn" onclick="niit()">niit une oloh</button>
+        <p id="result_10"></p>
     </div>
     <script>
         function calculate() {
@@ -36,14 +74,87 @@
             const input = document.getElementById("input");
             const input_2 = document.getElementById("input_2");
             const btn = document.getElementById("btn");
-            const result = document.getElementById("result_1");
+            const result = document.getElementById("result_2");
             let number = Number(input.value);
             let number_2 = Number(input_2.value);
             let sum = number + number_2;
-            result_1.innerHTML = "niilber n: " + sum;
+            result_2.innerHTML = "niilber n: " + sum;
         }
         function shalgah(){
-            
+            const input = document.getElementById("ageInput").value;
+            const result = document.getElementById("result_3");
+            if(input>=18){
+                result.innerHTML = "ta nasand hursen baina";
+            }
+            else{
+                result.innerHTML = "ta nasand hureegui baina";
+            }
+        }
+        function is_even(){
+            const input = document.getElementById("buhel_too").value;
+            const result = document.getElementById("result_4");
+            if(input%2==0){
+                result.innerHTML = "tegsh too";
+            }
+            else{
+                result.innerHTML = "sondgoi too";
+            }
+        }
+        function is_max(){
+            const input = document.getElementById("too_5.1").value;
+            const input_2 = document.getElementById("too_5.2").value;
+            const result = document.getElementById("result_5");
+            result.innerHTML = "max: " + Math.max(input, input_2);
+        }
+        function square(){
+            const input = document.getElementById("too_6").value;
+            const result = document.getElementById("result_6");
+            result.innerHTML = "power of two" + Math.pow(input, 2);
+        }
+        function onoo(){
+            const input = document.getElementById("too_7").value;
+            const result = document.getElementById("result_7");
+            if(input>=90 && input<=100){
+                result.innerHTML = "A"
+            }
+            else if(input>=80 && input<=89){
+                result.innerHTML = "B"
+            }
+            else if(input>=70 && input<=79){
+                result.innerHTML = "C"
+            }
+            else if(input>=60 && input<=69){
+                result.innerHTML = "D"
+            }
+            else if(input>=0 && input<=59){
+                result.innerHTML = "F"
+            }
+            else{
+                result.innerHTML = "zuw dunge oruul xoxo"
+            }
+        }
+        function hurwuuleh(){
+            const input = document.getElementById("too_8").value;
+            const result = document.getElementById("result_8");
+            fahrenheit = input * 9 / 5 + 32;
+            result.innerHTML = "fahrenheit: " + fahrenheit;
+        }
+        function sumofdigits(){
+            let input = document.getElementById("too_9").value;
+            const result = document.getElementById("result_9");
+            let sum = 0;
+            while(input>0){
+                sum += input%10;
+                input = Math.floor(input/10);
+            }
+            result.innerHTML = "sum: " + sum;
+        }
+        function niit(){
+            const input_1 = document.getElementById("too_10.1").value;
+            const input_2 = document.getElementById("too_10.2").value;
+            const input_3 = document.getElementById("too_10.3").value;
+            const result = document.getElementById("result_10");
+            result.innerHTML = input_1 + "-" + input_2*input_3
         }
     </script>
 </body>
