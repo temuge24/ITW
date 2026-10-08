@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="userForm">
+    <label>Нэр</label>
+    <input name="name" required>
+    <label>Имэйл</label>
+    <input name="email" type="email" required>
+    <button type="submit">Хадгалах</button>
+    </form>
+    <ul id="userList"></ul>
+    <style>
+        form {
+            max-width: 320px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px #0002;
+            }
+        input { width: 100%; padding: 8px; }
+        button { background: #14b8a6; }
+    </style>
+    <script>
+        const users = [];
+        const form = document.getElementById("userForm");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const data = new FormData(form);
+            const user = {
+                name: data.get("name").trim(),
+                email:data.get("email").trim(),
+            };
+            users.push(user);
+            form.reset();
+            renderUsers();
+        });
+        function renderUsers(){
+            const list = document.getElementById("userList");
+            list.innerHTML = "";
+            users.forEach((u) => {
+                const li = document.createElement("li");
+                li.textContent = u.name + " - " + u.email;
+                list.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
